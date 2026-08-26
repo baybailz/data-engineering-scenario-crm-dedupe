@@ -1,6 +1,30 @@
 [
  {
   "model_name": "dim_company",
+  "row_count": 8,
+  "invocation_id": "e5da43d5-7016-40ea-bc5e-a017392f85f0",
+  "loaded_at": "2026-08-26 18:48:02.667000"
+ },
+ {
+  "model_name": "dim_purchased_company",
+  "row_count": 3,
+  "invocation_id": "e5da43d5-7016-40ea-bc5e-a017392f85f0",
+  "loaded_at": "2026-08-26 18:48:02.481000"
+ },
+ {
+  "model_name": "dim_company_duplicates",
+  "row_count": 7,
+  "invocation_id": "e5da43d5-7016-40ea-bc5e-a017392f85f0",
+  "loaded_at": "2026-08-26 18:48:02.286000"
+ },
+ {
+  "model_name": "dim_record_status",
+  "row_count": 7,
+  "invocation_id": "e5da43d5-7016-40ea-bc5e-a017392f85f0",
+  "loaded_at": "2026-08-26 18:48:02.285000"
+ },
+ {
+  "model_name": "dim_company",
   "row_count": 5,
   "invocation_id": "838edab9-e334-4098-a7fd-977d9ee87389",
   "loaded_at": "2026-08-26 18:43:27.959000"
@@ -12,13 +36,13 @@
   "loaded_at": "2026-08-26 18:43:27.793000"
  },
  {
-  "model_name": "dim_record_status",
+  "model_name": "dim_company_duplicates",
   "row_count": 0,
   "invocation_id": "838edab9-e334-4098-a7fd-977d9ee87389",
   "loaded_at": "2026-08-26 18:43:27.601000"
  },
  {
-  "model_name": "dim_company_duplicates",
+  "model_name": "dim_record_status",
   "row_count": 0,
   "invocation_id": "838edab9-e334-4098-a7fd-977d9ee87389",
   "loaded_at": "2026-08-26 18:43:27.601000"
@@ -480,13 +504,13 @@
   "loaded_at": "2026-08-21 15:07:23.630000"
  },
  {
-  "model_name": "dim_company_duplicates",
+  "model_name": "dim_record_status",
   "row_count": 7,
   "invocation_id": "d15cb10e-11a8-48d8-905b-54f292043806",
   "loaded_at": "2026-08-21 15:07:23.339000"
  },
  {
-  "model_name": "dim_record_status",
+  "model_name": "dim_company_duplicates",
   "row_count": 7,
   "invocation_id": "d15cb10e-11a8-48d8-905b-54f292043806",
   "loaded_at": "2026-08-21 15:07:23.339000"
@@ -570,14 +594,14 @@
   "loaded_at": "2026-08-21 15:06:57.784000"
  },
  {
-  "model_name": "dim_company_duplicates",
-  "row_count": 19,
+  "model_name": "dim_record_status",
+  "row_count": 20,
   "invocation_id": "c227e8d0-067e-49ad-857f-2ae8bdfc1421",
   "loaded_at": "2026-08-21 15:06:57.641000"
  },
  {
-  "model_name": "dim_record_status",
-  "row_count": 20,
+  "model_name": "dim_company_duplicates",
+  "row_count": 19,
   "invocation_id": "c227e8d0-067e-49ad-857f-2ae8bdfc1421",
   "loaded_at": "2026-08-21 15:06:57.641000"
  },
