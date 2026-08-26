@@ -881,6 +881,19 @@ function dagLayers(){
 function svgDag(){
   const layers=dagLayers();if(!layers.length)return '';
   const W=1060,NW=layers.length>4?176:196,NH=46,GAP=22,colGap=(W-layers.length*NW)/Math.max(1,layers.length-1);
+  const edges=D.lineage.edges;
+  const colOf={};layers.forEach((l,ci)=>l.nodes.forEach(n=>colOf[n]=ci));
+  // Order each column by the average row of its inputs so edges run mostly
+  // straight instead of crossing.
+  const rowOf={};
+  layers.forEach((l,ci)=>{
+    if(ci>0){
+      const score=n=>{const ps=edges.filter(([a,b])=>b===n&&colOf[a]<ci&&rowOf[a]!=null).map(([a])=>rowOf[a]);
+        return ps.length?ps.reduce((x,y)=>x+y,0)/ps.length:99;};
+      l.nodes.sort((a,b)=>score(a)-score(b)||a.localeCompare(b));
+    }
+    l.nodes.forEach((n,ri)=>rowOf[n]=ri);
+  });
   const maxRows=Math.max(...layers.map(l=>l.nodes.length));
   const H=Math.max(150,maxRows*(NH+GAP)+30);
   const pos={};let nodes='';
@@ -890,11 +903,18 @@ function svgDag(){
       nodes+=`<rect class="dagnode ${l.cls}" x="${x}" y="${y}" width="${NW}" height="${NH}" rx="10"/>
         <text class="dagtag" x="${x+NW-12}" y="${y+16}" text-anchor="end">${LAYER_TAG[l.layer]||l.layer.toUpperCase()}</text>
         <text class="dagtext" x="${x+14}" y="${y+32}">${esc(n)}</text>`;});});
-  const edges=D.lineage.edges.filter(([a,b])=>pos[a]&&pos[b]).map(([a,b])=>{
-    const x1=pos[a].x+NW,y1=pos[a].y+NH/2,x2=pos[b].x,y2=pos[b].y+NH/2;
-    return `<path class="dagline" d="M${x1} ${y1} C ${x1+55} ${y1}, ${x2-55} ${y2}, ${x2} ${y2}"/>`;}).join('');
+  const paths=edges.filter(([a,b])=>pos[a]&&pos[b]).map(([a,b])=>{
+    const A=pos[a],B=pos[b];
+    if(colOf[a]===colOf[b]){
+      // Same column: a short vertical connector, not a loop across the page.
+      const x=A.x+NW-24,[top,bot]=A.y<B.y?[A,B]:[B,A];
+      return `<path class="dagline" d="M${x} ${top.y+NH} V${bot.y}"/>`;
+    }
+    const x1=A.x+NW,y1=A.y+NH/2,x2=B.x,y2=B.y+NH/2,dx=Math.max(40,Math.min(80,(x2-x1)/2));
+    return `<path class="dagline" d="M${x1} ${y1} C ${x1+dx} ${y1}, ${x2-dx} ${y2}, ${x2} ${y2}"/>`;
+  }).join('');
   return `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="dbt lineage graph">
-    <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="var(--border2)"/></marker></defs>${edges}${nodes}</svg>`;
+    <defs><marker id="arr2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M0 0 10 5 0 10z" fill="var(--border2)"/></marker></defs>${paths}${nodes}</svg>`;
 }
 function dagFlow(){
   return `<div class="vflow">${dagLayers().map((L,i)=>`${i?'<div class="varrow"></div>':''}<div class="vlayer"><div class="vtag">${esc(L.layer)}</div>${L.nodes.map(n=>`<div class="vnode ${L.cls}">${esc(n)}</div>`).join('')}</div>`).join('')}</div>`;
