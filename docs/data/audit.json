@@ -2,6 +2,30 @@
  {
   "model_name": "dim_company",
   "row_count": 5,
+  "invocation_id": "41ae18f6-f4f4-4f6d-a8b9-5c063fd35d92",
+  "loaded_at": "2026-08-26 14:41:47.097000"
+ },
+ {
+  "model_name": "dim_purchased_company",
+  "row_count": 0,
+  "invocation_id": "41ae18f6-f4f4-4f6d-a8b9-5c063fd35d92",
+  "loaded_at": "2026-08-26 14:41:46.993000"
+ },
+ {
+  "model_name": "dim_record_status",
+  "row_count": 0,
+  "invocation_id": "41ae18f6-f4f4-4f6d-a8b9-5c063fd35d92",
+  "loaded_at": "2026-08-26 14:41:46.868000"
+ },
+ {
+  "model_name": "dim_company_duplicates",
+  "row_count": 0,
+  "invocation_id": "41ae18f6-f4f4-4f6d-a8b9-5c063fd35d92",
+  "loaded_at": "2026-08-26 14:41:46.868000"
+ },
+ {
+  "model_name": "dim_company",
+  "row_count": 5,
   "invocation_id": "ae51f351-822f-45ad-b87e-5c426ddf0371",
   "loaded_at": "2026-08-21 19:49:50.248000"
  },
@@ -432,13 +456,13 @@
   "loaded_at": "2026-08-21 15:07:23.630000"
  },
  {
-  "model_name": "dim_company_duplicates",
+  "model_name": "dim_record_status",
   "row_count": 7,
   "invocation_id": "d15cb10e-11a8-48d8-905b-54f292043806",
   "loaded_at": "2026-08-21 15:07:23.339000"
  },
  {
-  "model_name": "dim_record_status",
+  "model_name": "dim_company_duplicates",
   "row_count": 7,
   "invocation_id": "d15cb10e-11a8-48d8-905b-54f292043806",
   "loaded_at": "2026-08-21 15:07:23.339000"
@@ -642,14 +666,14 @@
   "loaded_at": "2026-08-21 15:04:09.278000"
  },
  {
-  "model_name": "dim_company_duplicates",
-  "row_count": 24,
+  "model_name": "dim_record_status",
+  "row_count": 26,
   "invocation_id": "73174b4f-bf01-4fdb-ab4a-0f0a5256c4c6",
   "loaded_at": "2026-08-21 15:04:09.165000"
  },
  {
-  "model_name": "dim_record_status",
-  "row_count": 26,
+  "model_name": "dim_company_duplicates",
+  "row_count": 24,
   "invocation_id": "73174b4f-bf01-4fdb-ab4a-0f0a5256c4c6",
   "loaded_at": "2026-08-21 15:04:09.165000"
  },

@@ -12,7 +12,7 @@
    "primary_contact": "Mike Jones",
    "source": "crm_company",
    "source_record_key": null,
-   "dbt_run_timestamp": "2026-08-21 19:49:50.248000+00:00"
+   "dbt_run_timestamp": "2026-08-26 14:41:47.086000-04:00"
   },
   {
    "company_id": 1,
@@ -26,7 +26,7 @@
    "primary_contact": "Jane Smith",
    "source": "crm_company",
    "source_record_key": null,
-   "dbt_run_timestamp": "2026-08-21 19:49:50.248000+00:00"
+   "dbt_run_timestamp": "2026-08-26 14:41:47.086000-04:00"
   },
   {
    "company_id": 3,
@@ -40,7 +40,7 @@
    "primary_contact": "Ana Ruiz",
    "source": "crm_company",
    "source_record_key": null,
-   "dbt_run_timestamp": "2026-08-21 19:49:50.248000+00:00"
+   "dbt_run_timestamp": "2026-08-26 14:41:47.086000-04:00"
   },
   {
    "company_id": 4,
@@ -54,7 +54,7 @@
    "primary_contact": "Sam Carter",
    "source": "crm_company",
    "source_record_key": null,
-   "dbt_run_timestamp": "2026-08-21 19:49:50.248000+00:00"
+   "dbt_run_timestamp": "2026-08-26 14:41:47.086000-04:00"
   },
   {
    "company_id": 5,
@@ -68,71 +68,9 @@
    "primary_contact": "Priya Patel",
    "source": "crm_company",
    "source_record_key": null,
-   "dbt_run_timestamp": "2026-08-21 19:49:50.248000+00:00"
+   "dbt_run_timestamp": "2026-08-26 14:41:47.086000-04:00"
   }
  ],
  "dim_record_status": [],
- "dim_company_duplicates": [],
- "dm_naive_import": [
-  {
-   "company_name": "Delta Air Lines",
-   "address": "1030 Delta Boulevard",
-   "city": "Atlanta",
-   "state": "GA",
-   "zip": "30354",
-   "phone_number": "(404) 715-2600",
-   "source": "crm_company",
-   "cluster_key": "delta air lines",
-   "in_cluster": false,
-   "dbt_run_timestamp": "2026-08-21 19:49:51.103000+00:00"
-  },
-  {
-   "company_name": "Coca-Cola",
-   "address": "1 Coca-Cola Plaza NW",
-   "city": "Atlanta",
-   "state": "GA",
-   "zip": "30313",
-   "phone_number": "(404) 676-2121",
-   "source": "crm_company",
-   "cluster_key": "coca cola",
-   "in_cluster": false,
-   "dbt_run_timestamp": "2026-08-21 19:49:51.103000+00:00"
-  },
-  {
-   "company_name": "Chick-fil-A",
-   "address": "5200 Buffington Road",
-   "city": "Atlanta",
-   "state": "GA",
-   "zip": "30349",
-   "phone_number": "(404) 765-8000",
-   "source": "crm_company",
-   "cluster_key": "chick fil a",
-   "in_cluster": false,
-   "dbt_run_timestamp": "2026-08-21 19:49:51.103000+00:00"
-  },
-  {
-   "company_name": "7-Eleven",
-   "address": "218 Peachtree Street NW",
-   "city": "Atlanta",
-   "state": "GA",
-   "zip": "30303",
-   "phone_number": "(404) 555-0100",
-   "source": "crm_company",
-   "cluster_key": "7 eleven",
-   "in_cluster": false,
-   "dbt_run_timestamp": "2026-08-21 19:49:51.103000+00:00"
-  },
-  {
-   "company_name": "Home Depot",
-   "address": "2455 Paces Ferry Road SE",
-   "city": "Atlanta",
-   "state": "GA",
-   "zip": "30339",
-   "phone_number": "770-433-8211",
-   "source": "crm_company",
-   "cluster_key": "home depot",
-   "in_cluster": false,
-   "dbt_run_timestamp": "2026-08-21 19:49:51.103000+00:00"
-  }
- ]
+ "dim_company_duplicates": []
 }
