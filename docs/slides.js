@@ -217,24 +217,5 @@ window.SLIDES = [
       <p class="lead">${m('select * from dim_company')}</p>
       <div class="verdicts scrollbox"><table>
         <thead><tr><th>ID</th><th>Company</th><th>Address</th><th>Source</th></tr></thead>
-        <tbody>${rows}</tbody></table></div>`;}},
-
-  {id:'avoided', kicker:'WHAT WE AVOIDED', render(){
-    const rank = r => r.source === 'crm_company' ? 0 : 1;
-    const rows = [...(S.D.tables.dm_naive_import || [])]
-      .sort((a, b) => String(a.cluster_key).localeCompare(String(b.cluster_key))
-        || rank(a) - rank(b) || String(a.source).localeCompare(String(b.source)))
-      .map(r => `
-      <tr${r.in_cluster ? ' class="rowdup"' : ''}>
-        <td><b>${S.esc(r.company_name)}</b></td>
-        <td>${S.esc(r.address)}<span class="sub2">${S.esc(r.city)}, ${S.esc(r.state)} ${S.esc(r.zip ?? '')}</span></td>
-        <td class="mono faded">${S.esc(r.phone_number ?? '—')}</td>
-        <td><span class="mono faded">${S.esc(r.source)}</span></td>
-      </tr>`).join('');
-    return `<h2>What we avoided</h2>
-      <p class="lead">${m('select * from dm_naive_import')} — the same rows imported blind,
-        with no matching in between.</p>
-      <div class="verdicts scrollbox"><table>
-        <thead><tr><th>Company</th><th>Address</th><th>Phone</th><th>Source</th></tr></thead>
-        <tbody>${rows}</tbody></table></div>`;}},
+        <tbody>${rows}</tbody></table></div>`;}}
 ];

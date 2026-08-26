@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-08-21T19:49:51+00:00",
+ "generated_at": "2026-08-26T18:41:48+00:00",
  "files_loaded": [],
  "files_pending": [
   "list_a",
@@ -11,8 +11,7 @@
  "row_counts": {
   "dim_company": 5,
   "dim_record_status": 0,
-  "dim_company_duplicates": 0,
-  "dm_naive_import": 5
+  "dim_company_duplicates": 0
  },
  "companies_total": 5,
  "companies_imported": 0,

@@ -1,22 +1,10 @@
 {
  "nodes": [
   {
-   "id": "trn_scored_pairs",
-   "layer": "transform",
+   "id": "dim_company_duplicates",
+   "layer": "conformed",
    "type": "model",
-   "path": "models/transform/trn_scored_pairs.sql"
-  },
-  {
-   "id": "stg_company",
-   "layer": "stage",
-   "type": "model",
-   "path": "models/stage/stg_company.sql"
-  },
-  {
-   "id": "stg_purchased_company",
-   "layer": "stage",
-   "type": "model",
-   "path": "models/stage/stg_purchased_company.sql"
+   "path": "models/conformed/dim_company_duplicates.sql"
   },
   {
    "id": "dim_company",
@@ -25,28 +13,10 @@
    "path": "models/conformed/dim_company.sql"
   },
   {
-   "id": "dim_company_duplicates",
-   "layer": "conformed",
-   "type": "model",
-   "path": "models/conformed/dim_company_duplicates.sql"
-  },
-  {
-   "id": "dim_record_status",
-   "layer": "conformed",
-   "type": "model",
-   "path": "models/conformed/dim_record_status.sql"
-  },
-  {
-   "id": "dim_purchased_company",
-   "layer": "conformed",
-   "type": "model",
-   "path": "models/conformed/dim_purchased_company.sql"
-  },
-  {
-   "id": "dm_naive_import",
-   "layer": "datamart",
-   "type": "model",
-   "path": "models/datamart/dm_naive_import.sql"
+   "id": "crm_company",
+   "layer": "seed",
+   "type": "seed",
+   "path": "seeds/crm_company.csv"
   },
   {
    "id": "company_name_aliases",
@@ -55,42 +25,46 @@
    "path": "seeds/company_name_aliases.csv"
   },
   {
+   "id": "stg_purchased_company",
+   "layer": "stage",
+   "type": "model",
+   "path": "models/stage/stg_purchased_company.sql"
+  },
+  {
+   "id": "dim_purchased_company",
+   "layer": "conformed",
+   "type": "model",
+   "path": "models/conformed/dim_purchased_company.sql"
+  },
+  {
+   "id": "stg_company",
+   "layer": "stage",
+   "type": "model",
+   "path": "models/stage/stg_company.sql"
+  },
+  {
+   "id": "trn_scored_pairs",
+   "layer": "transform",
+   "type": "model",
+   "path": "models/transform/trn_scored_pairs.sql"
+  },
+  {
+   "id": "dim_record_status",
+   "layer": "conformed",
+   "type": "model",
+   "path": "models/conformed/dim_record_status.sql"
+  },
+  {
    "id": "purchased_company",
    "layer": "seed",
    "type": "seed",
    "path": "seeds/purchased_company.csv"
-  },
-  {
-   "id": "crm_company",
-   "layer": "seed",
-   "type": "seed",
-   "path": "seeds/crm_company.csv"
   }
  ],
  "edges": [
   [
-   "stg_purchased_company",
-   "trn_scored_pairs"
-  ],
-  [
-   "stg_company",
-   "trn_scored_pairs"
-  ],
-  [
-   "crm_company",
-   "stg_company"
-  ],
-  [
-   "company_name_aliases",
-   "stg_company"
-  ],
-  [
-   "purchased_company",
-   "stg_purchased_company"
-  ],
-  [
-   "company_name_aliases",
-   "stg_purchased_company"
+   "trn_scored_pairs",
+   "dim_company_duplicates"
   ],
   [
    "stg_company",
@@ -101,16 +75,12 @@
    "dim_company"
   ],
   [
-   "trn_scored_pairs",
-   "dim_company_duplicates"
+   "purchased_company",
+   "stg_purchased_company"
   ],
   [
-   "trn_scored_pairs",
-   "dim_record_status"
-  ],
-  [
-   "stg_purchased_company",
-   "dim_record_status"
+   "company_name_aliases",
+   "stg_purchased_company"
   ],
   [
    "dim_record_status",
@@ -121,12 +91,28 @@
    "dim_purchased_company"
   ],
   [
-   "stg_company",
-   "dm_naive_import"
+   "crm_company",
+   "stg_company"
+  ],
+  [
+   "company_name_aliases",
+   "stg_company"
   ],
   [
    "stg_purchased_company",
-   "dm_naive_import"
+   "trn_scored_pairs"
+  ],
+  [
+   "stg_company",
+   "trn_scored_pairs"
+  ],
+  [
+   "trn_scored_pairs",
+   "dim_record_status"
+  ],
+  [
+   "stg_purchased_company",
+   "dim_record_status"
   ]
  ],
  "layers": [

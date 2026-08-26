@@ -47,8 +47,7 @@
     "tables": [
       "dim_company",
       "dim_record_status",
-      "dim_company_duplicates",
-      "dm_naive_import"
+      "dim_company_duplicates"
     ],
     "layers": [
       "seed",
